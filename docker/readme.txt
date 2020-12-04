@@ -1,9 +1,9 @@
 ■Youtubeチャンネル情報一覧
-バーチャルYoutuberのランキング等を参照できるUserLocalに対してpythonスクリプトでスクレイピングを行い、
-Youtube Data APIで取得した情報をベーシックなLamp環境で表示するツールです。
+バーチャルYoutuberのランキング等を参照できるUserLocal(https://virtual-youtuber.userlocal.jp/)に対してpythonスクリプトでスクレイピングを行い、
+スクレイピング結果を基にYoutube Data APIで取得したチャンネル情報をベーシックなLamp環境で表示するツールです。
 
 readme.txtのあるディレクトリで以下のコマンドを実行してください。
-なお、手順2については外因（UserLocalの表示変更、Youtube APIの使用量制限）によって失敗するため、
+なお、手順2については外因（UserLocalの表示変更、Youtube Data APIの使用量制限）によって失敗するため、
 予めMySQLにデータは投入しており、飛ばしても問題ありません。
 
 
