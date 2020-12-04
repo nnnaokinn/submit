@@ -1,0 +1,39 @@
+
+table {
+  align: center;
+  border: solid 1px;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table th {
+  border: solid 1px;
+  background-color: #CCFFCC;
+  min-width: 110px
+}
+
+table td {
+  border: solid 1px;
+  padding: 3px 10px;
+}
+
+.tablesorter-headerUnSorted {
+    background-image: url('img/no_sort.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.tablesorter-headerAsc {
+    background-image: url('img/sort_asc.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+.tablesorter-headerDesc {
+    background-image: url('img/sort_desc.png');
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.sorter-false {
+    background-image: none;
+}

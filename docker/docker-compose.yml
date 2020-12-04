@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  mysql_db:
+    container_name: "mysql_db"
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: youtube
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    networks:
+      - app-tier
+
+  python:
+    build: ./python
+    working_dir: '/usr/src'
+    restart: always
+    depends_on:
+      - mysql_db
+    environment:
+      YOUTUBE_API_KEY: AIzaSyAkiOcysDwUsEoeBq9eZuhDjfmlg54kde8
+    volumes:
+      - ./python:/usr/src
+    tty: true
+    networks:
+      - app-tier
+
+  php:
+    build: ./php
+    restart: always
+    volumes:
+      - ./php/html:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - app-tier
+      
+networks:
+  app-tier:
+    driver: bridge
